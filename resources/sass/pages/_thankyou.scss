@@ -1,0 +1,18 @@
+
+.thanks{
+    display: grid;
+    place-items: center;
+    margin: 8em 0;
+    
+    span{
+        font-family: 'Roboto', sans-serif;
+        font-size: 2em;
+        line-height: 1;
+    }
+
+    p{
+        font-family: 'Montserrat', sans-serif;
+        padding: 1.2em;
+    }
+}
+

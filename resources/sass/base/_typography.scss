@@ -1,0 +1,13 @@
+
+body{
+    font-family: 'Roboto', sans-serif;
+    font-size: 18px;
+    font-weight: 300;
+    line-height: 1.6;
+    background-color: lighten($gray-background, 10%);
+
+}
+
+.active{
+    font-weight: 900;
+}

@@ -1,0 +1,32 @@
+footer{
+    background-color:#333;
+    color: $white;
+    padding: 40px 0 20px;
+
+
+    .footer-content{
+        display: flex;
+        justify-content: space-between;
+
+        ul{
+            display: flex;
+            width: 30%;
+            justify-content: space-between;
+        }
+        a{
+            color: $white;
+        }
+        .fa-heart{
+            color: red;
+        }
+        .fa-globe{
+           color: rgb(65, 65, 236);
+        }
+        .fa-youtube-play{
+            color: #e7160f;
+        }
+        .fa-twitter{
+            color: #00aced;
+        }
+    }
+}

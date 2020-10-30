@@ -1,0 +1,36 @@
+@charset 'utf-8';
+//Fonts
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,300;0,400;0,700;1,300;1,400;1,700&family=Roboto:ital,wght@0,300;0,400;0,700;1,300;1,400;1,700&display=swap');
+//Third party libraries
+a{
+    text-decoration: none;
+    color: $text-color;
+   
+     &:visited{
+         color: $text-color;
+     }
+
+}
+
+ul{
+    list-style: none;
+}
+
+h1 ,h2{
+    font-family: 'Montserrat', sans-serif;
+    font-weight: bold;
+}
+
+h1{
+    font-size: 38px;
+    margin-bottom: 40px;
+}
+
+h2{
+    font-size: 22px;
+    margin-bottom: 10px;
+}
+
+img{
+    max-width: 100%;
+}

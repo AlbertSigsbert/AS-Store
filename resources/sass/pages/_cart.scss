@@ -1,0 +1,98 @@
+.wrapper{
+  width: 73%;
+  margin: 3em 0 1em 0 ;
+  padding: 3em 0 1em 0;
+}
+
+.cart-item{
+    display: flex;
+    justify-content: space-between;
+    padding: .5em 1em;
+    
+    
+    .cart-image {
+      
+        & img{
+            width: 150px;    
+        } 
+    }
+     
+      .cart-details{
+          padding: 1em 0 0 1.5em;
+          width: 30%;
+        
+            p{
+                font-family: 'Montserrat', sans-serif;
+                font-size: .8em;
+                line-height: 1.3;
+            }
+      }
+
+      .cart-options{
+          display: flex;
+          flex-direction: column;
+          font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+          padding: 1.5em 0 1em 1.5em;
+          font-weight: bold;
+          font-size: small;
+      }
+
+      .cart-items-quantity {
+        padding: 1.5em 0 0 1.5em;
+      }
+      .cart-items-price{
+        padding: 1.5em 0 0 .5em;
+      }
+}
+
+.cart-item-code{
+    p{
+        padding-top: 1em;
+        font-size: .8em;
+    }
+    .apply-coupon{
+        margin: 1em 0;
+        input{
+            padding:.5em 2em;
+            border-radius:4px;
+        }
+
+    }
+}
+
+.total-pricing{
+    margin: 1em 0;
+    padding: 1em 1em;
+    background:darken($gray-background, 5%);
+    display: flex;
+    justify-content: space-between;
+    .shipping{
+        font-family: monospace;
+        width: 50%;
+    }
+    .price-calc{
+        display: flex;
+        font-family: sans-serif;
+        font-size: .9em;
+
+        .left-pricing{
+            margin-right: .5em;
+        }
+        
+        .left-pricing p:last-child,.right-pricing p:last-child{
+            font-weight: bold;
+        }
+    }
+}
+
+.cart-buttons{
+    margin-top: 2em;
+    display: flex;
+    justify-content: space-between;
+}
+
+.saved-for-later{
+   font-size: large;
+   font-weight: bold;
+   margin-top: 2em;
+}

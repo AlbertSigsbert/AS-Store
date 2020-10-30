@@ -1,0 +1,94 @@
+/****Non mobile first method *****/
+
+/****Large Devices , Wide Screens ****/
+
+@media all and (max-width: 1200px) {
+  .container {
+    max-width: 960px;
+  }
+}
+
+/****Medium Devices , Desktops ****/
+
+@media all and (max-width: 992px) {
+  header .top-nav {
+    flex-direction: column;
+  }
+
+  header .top-nav .logo {
+    margin: auto;
+  }
+
+  header .top-nav ul {
+    margin: 20px auto;
+    width: 80%;
+  }
+
+  .hero {
+    grid-template-columns: 1fr;
+    text-align: center;
+  }
+
+  .products {
+    grid-template-columns: 1fr;
+    width: 80%;
+    margin: auto;
+  }
+
+  .blog-section .blog-posts {
+    grid-template-columns: 1fr;
+    text-align: center;
+    width: 80%;
+    margin: auto;
+    grid-template-areas: "blog2" "blog1" "blog3";
+  }
+
+  .footer-content {
+    flex-direction: column;
+  }
+
+  .footer-content .made-with {
+    margin: auto;
+  }
+
+  .footer-content ul {
+    margin: 20px auto;
+    width: 60%;
+  }
+
+  .footer-content ul li:nth-child(1) {
+    display: none;
+  }
+}
+
+/****Small Devices , Tablets ****/
+
+/****Extra Small Devices , Phones****/
+
+/****Custom , iPhone Retina****/
+
+@media all and (max-width: 370px) {
+  header .top-nav {
+    padding: 20px 0;
+    font-size: 0.9em;
+  }
+
+  header .top-nav .logo {
+    display: none;
+  }
+
+  .hero-content {
+    width: 80%;
+    margin: auto;
+  }
+
+  .hero-content h1 {
+    font-size: 30px;
+    margin-top: 20px;
+  }
+
+  .button {
+    padding: 8px 20px;
+  }
+}
+

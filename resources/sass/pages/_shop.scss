@@ -1,0 +1,20 @@
+.panels{
+    display: grid;
+    grid-template-columns: 1fr 3fr;
+    margin-top: 1em;
+}
+
+.left-panel{
+    font-size: .8em;
+}
+
+.featured{
+    h1{
+        margin-bottom: 0px !important;
+    }
+}
+
+.products-header{
+    display: flex;
+    justify-content: space-between;
+}

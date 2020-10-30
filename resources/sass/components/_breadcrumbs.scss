@@ -1,0 +1,18 @@
+.lining{
+    background:darken($gray-background, 5%);
+    padding: 13px 0;
+
+    .flex{
+        display: flex;
+    
+       h6{
+           font-size: .8em;
+       }
+
+       i{
+           font-size: .8em;
+           padding: 2.5px;
+           margin-top: 2px;
+       }
+    }
+}

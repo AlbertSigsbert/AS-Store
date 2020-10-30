@@ -1,0 +1,90 @@
+
+header{
+    background-image: url('/images/bg2.jpg');
+    background-size: cover;
+    color: white;
+
+    .top-nav{
+        display: flex;
+        justify-content: space-between;
+        padding: 40px 0;
+    }
+    .logo{
+        font-weight: bold;
+        font-size: 28px;
+    }
+
+    ul{
+        display: flex;
+        text-transform: uppercase;
+        width: 30%;
+        justify-content: space-between;
+
+
+        a{
+            color: $white;
+            &:hover{
+                color: darken($white , 10%);
+            }
+        }
+    }
+}
+
+
+
+
+.hero{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-gap:$gutter;
+    padding: 20px 0 24px 0;
+
+    .hero-image{
+        padding-left: 60px;
+    }
+
+    h1{
+        margin-top: 50px;
+        font-size: 52px;
+    }
+
+    p{
+        margin: 40px 0 68px;
+    }
+    .button{
+        margin-right: 14px;
+    }
+}
+
+.featured-section{
+     padding: 50px 0;
+
+}
+
+.blog-section{
+
+    background:darken($gray-background, 10%);
+    border-top: 1px solid $separator;
+    padding: 50px 0;
+
+    .blog-posts{
+        display: grid;
+        grid-template-columns: repeat(3,1fr);
+        grid-gap: $gutter;
+        margin: 60px 0;
+        grid-template-areas: "blog1 blog2 blog3";
+
+        #blog1{
+            grid-area: blog1;
+        }
+        
+        #blog2{
+            grid-area: blog2;
+        }
+
+        #blog3{
+            grid-area: blog3;
+        }
+
+    }
+}
