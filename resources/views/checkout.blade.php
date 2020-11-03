@@ -86,7 +86,7 @@
                     <hr>
                     <div class="checkout-item">
                         <div class="checkout-image">
-                            <img src="{{ asset('images/Products/'.$item->model->slug.'.jpg')}}" width="" alt="">
+                            <img src="{{  productImage($item->model->image)}}" width="" alt="">
                         </div>
 
                         <div class="checkout-details">

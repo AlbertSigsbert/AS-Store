@@ -21,7 +21,8 @@ class ProductsTableSeeder extends Seeder
                                sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
                                Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris
                                nisi ut aliquip ex ea commodo consequat ',
-              'featured' => 1
+              'featured' => 1,
+              'image'=> 'products\November2020\playstation-5.jpg'
         ])->categories()->attach(8);
 
         Product::create([
@@ -33,7 +34,8 @@ class ProductsTableSeeder extends Seeder
                               sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
                               Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris
                               nisi ut aliquip ex ea commodo consequat',
-            'featured' => 1
+            'featured' => 1,
+            'image'=> 'products\November2020\canon-eos-250D.jpg'
         ])->categories()->attach(6);
 
         Product::create([
@@ -45,7 +47,8 @@ class ProductsTableSeeder extends Seeder
                               sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
                               Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris
                               nisi ut aliquip ex ea commodo consequat',
-            'featured' => 1
+            'featured' => 1,
+            'image'=> 'products\November2020\macbook-pro.jpg'
         ])->categories()->attach(1);
 
         Product::create([
@@ -57,7 +60,8 @@ class ProductsTableSeeder extends Seeder
                               sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
                               Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris
                               nisi ut aliquip ex ea commodo consequat',
-            'featured' => 1
+            'featured' => 1,
+            'image'=> 'products\November2020\xbox-series-x.jpg'
         ])->categories()->attach(8);
 
         Product::create([
@@ -69,7 +73,8 @@ class ProductsTableSeeder extends Seeder
                               sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
                               Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris
                               nisi ut aliquip ex ea commodo consequat',
-            'featured' => 1
+            'featured' => 1,
+            'image'=> 'products\November2020\iphone-12.jpg'
         ])->categories()->attach(3);
 
         Product::create([
@@ -81,7 +86,8 @@ class ProductsTableSeeder extends Seeder
                               sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
                               Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris
                               nisi ut aliquip ex ea commodo consequat',
-            'featured' => 1
+            'featured' => 1,
+            'image'=> 'products\November2020\27-inch-iMac.jpg'
         ])->categories()->attach(2);
 
         Product::create([
@@ -93,7 +99,8 @@ class ProductsTableSeeder extends Seeder
                               sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
                               Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris
                               nisi ut aliquip ex ea commodo consequat',
-            'featured' => 1
+            'featured' => 1,
+            'image'=> 'products\November2020\macBook-air.jpg'
         ])->categories()->attach(1);
 
         Product::create([
@@ -105,7 +112,8 @@ class ProductsTableSeeder extends Seeder
                               sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
                               Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris
                               nisi ut aliquip ex ea commodo consequat',
-            'featured' => 1
+            'featured' => 1,
+            'image'=> 'products\November2020\fire-hd-10-tablet.jpg'
         ])->categories()->attach(4);
 
         Product::create([
@@ -117,7 +125,8 @@ class ProductsTableSeeder extends Seeder
                               sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
                               Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris
                               nisi ut aliquip ex ea commodo consequat',
-            'featured' => 1
+            'featured' => 1,
+            'image'=> 'products\November2020\apple-iPad-pro-11.jpg'
         ])->categories()->attach(4);
 
         $product = Product::find(9);
@@ -133,7 +142,8 @@ class ProductsTableSeeder extends Seeder
                               sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
                               Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris
                               nisi ut aliquip ex ea commodo consequat',
-            'featured' => 1
+            'featured' => 1,
+            'image'=> 'products\November2020\playstation-4-pro.jpg'
         ])->categories()->attach(8);
 
 
@@ -146,7 +156,8 @@ class ProductsTableSeeder extends Seeder
                               sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
                               Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris
                               nisi ut aliquip ex ea commodo consequat',
-            'featured' => 1
+            'featured' => 1,
+            'image'=> 'products\November2020\life-like-solo-s460.jpg'
         ])->categories()->attach(7);
 
 
@@ -160,7 +171,8 @@ class ProductsTableSeeder extends Seeder
                               sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
                               Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris
                               nisi ut aliquip ex ea commodo consequat',
-            'featured' => 1
+            'featured' => 1,
+            'image'=> 'products\November2020\canon-eos-850D.jpg'
         ])->categories()->attach(6);
 
 
@@ -174,7 +186,8 @@ class ProductsTableSeeder extends Seeder
                           sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
                           Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris
                           nisi ut aliquip ex ea commodo consequat',
-        'featured' => 0
+        'featured' => 0,
+        'image'=> 'products\November2020\hp-probook-450-g3.jpg'
     ])->categories()->attach(1);
 
 
@@ -187,7 +200,8 @@ class ProductsTableSeeder extends Seeder
                           sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
                           Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris
                           nisi ut aliquip ex ea commodo consequat',
-        'featured' => 0
+        'featured' => 0,
+        'image'=> 'products\November2020\hp-envy-x360-convertible.jpg'
     ])->categories()->attach(1);
 
 
@@ -200,7 +214,8 @@ class ProductsTableSeeder extends Seeder
                           sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
                           Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris
                           nisi ut aliquip ex ea commodo consequat',
-        'featured' => 0
+        'featured' => 0,
+        'image'=> 'products\November2020\hp-envy-laptop-17t-cg000.jpg'
     ])->categories()->attach(1);
 
     Product::create([
@@ -212,7 +227,8 @@ class ProductsTableSeeder extends Seeder
                           sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
                           Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris
                           nisi ut aliquip ex ea commodo consequat',
-        'featured' => 0
+        'featured' => 0,
+        'image'=> 'products\November2020\dell-inspiron-15-3000-laptop.jpg'
     ])->categories()->attach(1);
 
     Product::create([
@@ -224,7 +240,8 @@ class ProductsTableSeeder extends Seeder
                           sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
                           Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris
                           nisi ut aliquip ex ea commodo consequat',
-        'featured' => 0
+        'featured' => 0,
+        'image'=> 'products\November2020\new-xps-15-touch-laptop.jpg'
     ])->categories()->attach(1);
 
     Product::create([
@@ -236,7 +253,8 @@ class ProductsTableSeeder extends Seeder
                           sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
                           Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris
                           nisi ut aliquip ex ea commodo consequat',
-        'featured' => 0
+        'featured' => 0,
+        'image'=> 'products\November2020\inspiron-17-3000-laptop.jpg'
     ])->categories()->attach(1);
 
     Product::create([
@@ -248,7 +266,8 @@ class ProductsTableSeeder extends Seeder
                           sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
                           Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris
                           nisi ut aliquip ex ea commodo consequat',
-        'featured' => 0
+        'featured' => 0,
+        'image'=> 'products\November2020\dell-xps-13.jpg'
     ])->categories()->attach(1);
 
     Product::create([
@@ -260,7 +279,8 @@ class ProductsTableSeeder extends Seeder
                           sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
                           Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris
                           nisi ut aliquip ex ea commodo consequat',
-        'featured' => 0
+        'featured' => 0,
+        'image'=> 'products\November2020\asus-rog-zephyrus-g14.jpg'
     ])->categories()->attach(1);
 
     Product::create([
@@ -273,7 +293,8 @@ class ProductsTableSeeder extends Seeder
                            off an alarm (if it’s in Bluetooth range) or locate it anywhere in the world
                            using Tile’s crowd-finding network.
                            The tracker can work for a limited time even when the laptop is off.',
-        'featured' => 1
+        'featured' => 1,
+        'image'=> 'products\November2020\hp-elite-dragonfly.jpg'
     ])->categories()->attach(1);
 
     Product::create([
@@ -285,7 +306,8 @@ class ProductsTableSeeder extends Seeder
                           You get an RTX GPU (up to Nvidia’s 2080 Super Max-Q) an eight-core CPU
                            (Intel’s Core i7-10875H) and either a 300Hz screen or a 120Hz touchscreen.
                             There’s even an RGB keyboard with color effects tailored to the game you’re playing.',
-        'featured' => 1
+        'featured' => 1,
+        'image'=> 'products\November2020\razer-blade-pro-17.jpg'
     ])->categories()->attach(1);
 
     Product::create([
@@ -297,7 +319,8 @@ class ProductsTableSeeder extends Seeder
                            sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
                            Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris
                            nisi ut aliquip ex ea commodo consequat',
-        'featured' => 1
+        'featured' => 1,
+        'image'=> 'products\November2020\hp-spectre-x360-13.jpg'
     ])->categories()->attach(1);
 
     Product::create([
@@ -309,7 +332,8 @@ class ProductsTableSeeder extends Seeder
                            sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
                            Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris
                            nisi ut aliquip ex ea commodo consequat',
-        'featured' => 1
+        'featured' => 1,
+        'image'=> 'products\November2020\macbook-pro-13.jpg'
     ])->categories()->attach(1);
 
     Product::create([
@@ -322,7 +346,8 @@ class ProductsTableSeeder extends Seeder
                            excellent picture — Personally i actually preferred it to my MacBook Pro’s screen.
                             Between its standout performance, peripherals, and portability, this is
                              really the Chromebook to beat.',
-        'featured' => 1
+        'featured' => 1,
+        'image'=> 'products\November2020\acer-chromebook-spin-713.jpg'
     ])->categories()->attach(1);
 
     Product::create([
@@ -334,7 +359,8 @@ class ProductsTableSeeder extends Seeder
                             can help out with creative tasks. Our model was able to export a five-minute,
                             33-second video in Adobe Premiere Pro in just four and a half minutes — which
                             is faster than we got with the 16-inch MacBook Pro.',
-        'featured' => 1
+        'featured' => 1,
+        'image'=> 'products\November2020\dell-xps-15.jpg'
     ])->categories()->attach(1);
 
    //Desktops
@@ -349,40 +375,9 @@ class ProductsTableSeeder extends Seeder
                        9th-generation Intel chips as well as Nvidia’s most powerful
                        gaming GTX and RTX graphics cards, starting with an i3 processor and
                        the GTX 1650 to handle many powerful games without burning a whole in your pocket.',
-    'featured' => 0
+    'featured' => 0,
+    'image'=> 'products\November2020\dell-g5-gaming desktop.jpg'
 ])->categories()->attach(2);
-
-Product::create([
-    'name'=> 'Intel Ghost Canyon NUC',
-    'slug'=>'intel-ghost-canyon-nuc',
-    'details' => '9th-generation Intel Core i9 | Graphics: Intel UHD Graphics 630 | RAM: 64B DDR4
-                  | Storage: 4TB SSD',
-    'price' => 1500,
-    'description' => 'Intel’s NUC has come a long way from its humble beginnings.
-                      For example, while the previous Hades Canyon didn’t come with
-                      a RAM or storage, the newer Ghost Canyon has both. In fact, not
-                      only does it have more offerings now in terms of specs, but it’s
-                       also highly configurable so you can personalize it to your liking
-                     before hitting that buy button. With 9th-generation Intel Core chips,
-                      up to 64GB of memory and up to 4TB dual storage, we’re all for it.',
-    'featured' => 0
-])->categories()->attach(2);
-
-Product::create([
-    'name'=> ' HP Omen Desktop PC',
-    'slug'=>'hp-omen-desktop-pc',
-    'details' => 'Intel Core i7-9700K | Graphics: Nvidia GeForce RTX 2080 Ti | RAM: Up to 64GB |
-                     Storage: 512GB SSD + 2TB HDD',
-    'price' => 1468,
-    'description' => 'While the Decepticon look this gaming PC sports might only be for some,
-                      there’s definitely something for everybody as far as configurations
-                      go – whether you’re a casual gamer on a budget or a hardcore one willing
-                     to drop a lot of dough for a souped up rig. ou’re getting a considerable
-                      amount of power and storage.HP Omen Desktop PC comes in a tool-less design,
-                      making it upgradeable.',
-    'featured' => 0
-])->categories()->attach(2);
-
 
  }
 }

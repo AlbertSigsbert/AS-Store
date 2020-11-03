@@ -23,7 +23,7 @@
         <div class="cart-item">
                <div class="cart-image">
                     <a href="{{route('shop.show' , $item->model->slug) }}">
-                        <img src="{{ asset('images/Products/'.$item->model->slug.'.jpg')}}" alt="">
+                        <img src="{{ productImage($item->model->image) }}" alt="">
                     </a>
                </div>
 

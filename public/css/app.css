@@ -780,6 +780,38 @@ header ul a:hover {
   width: 75%;
 }
 
+.product-section .product-section-image img {
+  opacity: 0;
+  transition: opacity 0.1s ease-out;
+}
+
+.product-section .product-section-image img.active {
+  opacity: 1;
+}
+
+.product-section .product-section-images {
+  display: grid;
+  grid-template-columns: repeat(6, 1fr);
+  grid-gap: 20px;
+  margin-top: 20px;
+}
+
+.product-section .product-section-images .selected {
+  border: 1px solid #979797;
+}
+
+.product-section .product-section-thumbnail {
+  display: flex;
+  align-items: center;
+  border: 1px solid lightgray;
+  min-height: 66px;
+  cursor: pointer;
+}
+
+.product-section .product-section-thumbnail:hover {
+  border: 1px solid #979797;
+}
+
 .product-section .product-section-info h3 {
   font-size: 2em;
   padding-bottom: 0.5em;

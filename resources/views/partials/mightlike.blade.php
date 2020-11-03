@@ -5,7 +5,7 @@
              @foreach ($mightLike as $product)
              <div class="might-like-product">
                  <a href="{{route('shop.show' , $product->slug)}}">
-                    <img src="{{asset('images/Products/'.$product->slug.'.jpg')}}" alt=""> 
+                    <img src="{{ productImage($product->image) }}" alt="">
                     <span class="product-name">{{$product->name}}</span>
                     <div class="product-price">${{$product->price}}</div>
                  </a>

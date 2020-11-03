@@ -74,7 +74,7 @@
                      @foreach ($products as $product)
                         <div class="product">
                             <a href="{{route('shop.show' , $product->slug)}}">
-                                <img src="{{asset('images/Products/'.$product->slug.'.jpg')}}" alt="">
+                                <img src="{{ productImage($product->image) }}" alt="">
                             </a>
                             <a href="{{route('shop.show' , $product->slug)}}">
                                 <span class="product-name">{{$product->name}}</span>
