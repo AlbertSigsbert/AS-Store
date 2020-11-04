@@ -41,3 +41,7 @@ Route::get('/thankyou' , 'ConfirmationController@index')->name('confirmation.ind
 Route::group(['prefix' => 'admin'], function () {
     Voyager::routes();
 });
+
+Auth::routes();
+
+Route::get('/home', 'HomeController@index')->name('home');

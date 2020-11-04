@@ -7,33 +7,26 @@
 
         <!--fonts-->
         <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
-        <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;500&family=Roboto&display=swap" rel="stylesheet"
+        <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;500&family=Roboto&display=swap" rel="stylesheet">
         <!--styles-->
-      <link rel="stylesheet" href="{{asset('css/app.css')}}">
+      <link rel="stylesheet" href="{{asset('css/main.css')}}">
       <link rel="stylesheet" href="{{asset('css/responsive.css')}}">
     </head>
 
 <body>
        <header>
            <div class="top-nav container">
-               <div class="logo">Laravel Ecommerce</div>
-               <ul>
-                   <li><a href="{{route('shop.index')}}">Shop</a></li>
-                   <li><a href="#">About</a></li>
-                   <li><a href="#">Blog</a></li>
-                   <li>
-                    <a href="{{route('cart.index')}}">
-                       Cart
-                           @if (Cart::instance('default')->count() > 0)
-                               <span class="cart-count">
-                                   <span>{{Cart::instance('default')->count()}}</span>
-                               </span>
-                           @endif
-
-                   </a>
-               </li>
-               </ul>
-
+               <div class="top-nav-left">
+                    <div class="logo">Laravel Ecommerce</div>
+                    <ul>
+                        <li><a href="{{route('shop.index')}}">Shop</a></li>
+                        <li><a href="#">About</a></li>
+                        <li><a href="#">Blog</a></li>
+                    </ul>
+               </div>
+               <div class="top-nav-right">
+                    @include('partials.main-menu-right')
+               </div>
            </div><!--End of top nav -->
 
            <div class="hero container">

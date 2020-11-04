@@ -8,18 +8,32 @@ header{
         display: flex;
         justify-content: space-between;
         padding: 40px 0;
+
+       .top-nav-left{
+            display: flex;
+        }
+
+        .top-nav-right{
+            display: flex;
+        }
     }
     .logo{
         font-weight: bold;
         font-size: 28px;
+        margin-right: 58px;
     }
 
     ul{
-        display: flex;
-        text-transform: uppercase;
-        width: 30%;
-        justify-content: space-between;
 
+        text-transform: uppercase;
+        padding-top: 8px;
+
+        li{
+            margin-right: 38px;
+            &:last-child{
+                margin-right: 0;
+            }
+        }
 
         a{
             color: $white;
@@ -77,7 +91,7 @@ header{
         #blog1{
             grid-area: blog1;
         }
-        
+
         #blog2{
             grid-area: blog2;
         }
