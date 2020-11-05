@@ -33,29 +33,3 @@
     grid-template-columns: repeat(4,1fr);
     grid-gap:$gutter;
 }
-
-.top-nav{
-    display: flex;
-    justify-content: space-between;
-    padding: 40px 0;
-
-    .logo{
-        font-weight: bold;
-        font-size: 28px;
-    }
-
-    ul{
-        display: flex;
-        text-transform: uppercase;
-        width: 30%;
-        justify-content: space-between;
-
-
-        a{
-            color: $white;
-            &:hover{
-                color: darken($white , 10%);
-            }
-        }
-    }
-}

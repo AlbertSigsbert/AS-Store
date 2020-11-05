@@ -99,32 +99,6 @@ img {
   grid-gap: 30px;
 }
 
-.top-nav {
-  display: flex;
-  justify-content: space-between;
-  padding: 40px 0;
-}
-
-.top-nav .logo {
-  font-weight: bold;
-  font-size: 28px;
-}
-
-.top-nav ul {
-  display: flex;
-  text-transform: uppercase;
-  width: 30%;
-  justify-content: space-between;
-}
-
-.top-nav ul a {
-  color: #e9e9e9;
-}
-
-.top-nav ul a:hover {
-  color: #d0d0d0;
-}
-
 .nav {
   background-color: #333;
 }
@@ -688,44 +662,45 @@ header {
   color: white;
 }
 
-header .top-nav {
+.top-nav {
   display: flex;
   justify-content: space-between;
   padding: 40px 0;
 }
 
-header .top-nav .top-nav-left {
+.top-nav .top-nav-left {
   display: flex;
 }
 
-header .top-nav .top-nav-right {
+.top-nav .top-nav-right {
   display: flex;
 }
 
-header .logo {
+.top-nav .logo {
   font-weight: bold;
   font-size: 28px;
   margin-right: 58px;
 }
 
-header ul {
+.top-nav ul {
+  display: flex;
   text-transform: uppercase;
   padding-top: 8px;
 }
 
-header ul li {
+.top-nav ul li {
   margin-right: 38px;
 }
 
-header ul li:last-child {
+.top-nav ul li:last-child {
   margin-right: 0;
 }
 
-header ul a {
+.top-nav ul a {
   color: #e9e9e9;
 }
 
-header ul a:hover {
+.top-nav ul a:hover {
   color: #d0d0d0;
 }
 

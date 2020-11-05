@@ -18,7 +18,12 @@
             @csrf
               <div class="form-group">
                 <label for="Email Address" class="form-label">Email Address</label>
-              <input class="form-control" type="email" name="email" id="email" value="{{ old('email')}}" required>
+                @if (auth()->user())
+                 <input class="form-control" type="email" name="email" id="email" value="{{auth()->user()->email}}" readonly>
+                @else
+                  <input class="form-control" type="email" name="email" id="email" value="{{ old('email')}}" required>
+                @endif
+
               </div>
 
                <div class="form-group">

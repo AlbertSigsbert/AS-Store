@@ -1,6 +1,6 @@
-@extends('layouts.app')
+@extends('partials.pagetemplate')
 
-@section('content')
+@section('page-content')
 <div class="container">
     <div class="row justify-content-center">
         <div class="col-md-8">
@@ -62,7 +62,11 @@
                                         {{ __('Forgot Your Password?') }}
                                     </a>
                                 @endif
+
+                                <a href="{{route('guestCheckout.index')}}" class="btn-primary">Checkout as a guest</a>
+
                             </div>
+
                         </div>
                     </form>
                 </div>

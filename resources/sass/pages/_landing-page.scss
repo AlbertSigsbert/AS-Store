@@ -3,47 +3,47 @@ header{
     background-image: url('/images/bg2.jpg');
     background-size: cover;
     color: white;
+}
 
-    .top-nav{
+.top-nav{
+    display: flex;
+    justify-content: space-between;
+    padding: 40px 0;
+
+   .top-nav-left{
         display: flex;
-        justify-content: space-between;
-        padding: 40px 0;
-
-       .top-nav-left{
-            display: flex;
-        }
-
-        .top-nav-right{
-            display: flex;
-        }
     }
+
+    .top-nav-right{
+        display: flex;
+    }
+
     .logo{
         font-weight: bold;
         font-size: 28px;
         margin-right: 58px;
     }
 
-    ul{
+ul{
+    display: flex;
+    text-transform: uppercase;
+    padding-top: 8px;
 
-        text-transform: uppercase;
-        padding-top: 8px;
-
-        li{
-            margin-right: 38px;
-            &:last-child{
-                margin-right: 0;
-            }
-        }
-
-        a{
-            color: $white;
-            &:hover{
-                color: darken($white , 10%);
-            }
+    li{
+        margin-right: 38px;
+        &:last-child{
+            margin-right: 0;
         }
     }
-}
 
+    a{
+        color: $white;
+        &:hover{
+            color: darken($white , 10%);
+        }
+    }
+  }
+}
 
 
 

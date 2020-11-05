@@ -20,7 +20,7 @@
 
 
 
-         @if( Route::is('confirmation.index'))
+         @if( Route::is('confirmation.index') || Route::is('register') ||  Route::is('login'))
            @include('partials.stickyfooter')
 
          @else
