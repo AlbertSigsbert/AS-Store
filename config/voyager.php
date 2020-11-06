@@ -16,7 +16,16 @@ return [
         'default_avatar'               => 'users/default.png',
         'redirect'                     => '/admin',
     ],
+ /*
+    |--------------------------------------------------------------------------
+    | Admin Password
+    |--------------------------------------------------------------------------
+    |
+    | Here you can specify the admin password
+    |
+    */
 
+    'adminPassword' => env('ADMIN_PASSWORD', 'password'),
     /*
     |--------------------------------------------------------------------------
     | Controllers config
