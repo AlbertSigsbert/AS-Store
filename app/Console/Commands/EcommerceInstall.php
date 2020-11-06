@@ -68,47 +68,59 @@ class EcommerceInstall extends Command
              //DB Sync
              $this->call('migrate:fresh', [
                 '--seed' => true,
+                '--force' => true,
             ]);
 
             $this->call('db:seed', [
                 '--class' => 'VoyagerDatabaseSeeder',
+                '--force' => true,
             ]);
 
             $this->call('db:seed', [
                 '--class' => 'VoyagerDummyDatabaseSeeder',
+                '--force' => true,
             ]);
             $this->call('db:seed', [
                 '--class' => 'DataTypesTableSeederCustom',
+                '--force' => true,
             ]);
 
             $this->call('db:seed', [
                 '--class' => 'DataRowsTableSeederCustom',
+                '--force' => true,
             ]);
 
 
             $this->call('db:seed', [
                 '--class' => 'MenuItemsTableSeederCustom',
+                '--force' => true,
             ]);
 
             $this->call('db:seed', [
                 '--class' => 'RolesTableSeederCustom',
+                '--force' => true,
             ]);
 
             $this->call('db:seed', [
                 '--class' => 'PermissionsTableSeederCustom',
+                '--force' => true,
             ]);
 
             $this->call('db:seed', [
                 '--class' => 'PermissionRoleTableSeeder',
+                '--force' => true,
             ]);
 
             $this->call('db:seed', [
                 '--class' => 'PermissionRoleTableSeederCustom',
+                '--force' => true,
             ]);
 
             $this->call('db:seed', [
                 '--class' => 'UsersTableSeederCustom',
+                '--force' => true,
             ]);
+
              $this->info('Dummy data installed.');
     }
 }
