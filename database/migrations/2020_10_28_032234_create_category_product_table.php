@@ -15,9 +15,19 @@ class CreateCategoryProductTable extends Migration
     {
         Schema::create('category_product', function (Blueprint $table) {
             $table->id();
-            $table->integer('product_id')->unsigned()->nullable();
-            $table->integer('category_id')->unsigned()->nullable();
+            $table->unsignedBigInteger('product_id')->nullable();
+            $table->unsignedBigInteger('category_id')->nullable();
+
             $table->timestamps();
+        });
+
+        Schema::table('category_product', function( $table) {
+            $table->foreign('product_id')->references('id')
+            ->on('products')->onDelete('cascade');
+
+            $table->foreign('category_id')->references('id')
+            ->on('category')->onDelete('cascade');
+
         });
     }
 
