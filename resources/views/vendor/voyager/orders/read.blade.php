@@ -32,31 +32,49 @@
     </h1>
     @include('voyager::multilingual.language-selector')
 @stop
+@section('css')
+   <style>
+    .order-products{
+       display: grid;
+       grid-gap: 1.2em;
+       grid-template-columns: repeat(6,1fr);
+    }
 
+    .single-order{
+        display: flex;
+        justify-content: space-between;
+
+    }
+   </style>
+@stop
 @section('content')
     <div class="page-content read container-fluid">
+
+        <div class="panel-heading" style="border-bottom:0;">
+            <h3 class="panel-title text-center page-header">Products for this Order</h3>
+        </div>
+
+        <div class="panel-body" style="padding-top:0;">
+                <div class="order-products">
+                    @foreach ($products as $product)
+                    <div class="order-product">
+                        <img src="{{asset('storage/'.$product->image)}}" alt="" srcset="" width="100px">
+                        <div> Product Id:  {{$product->id}}</div>
+                        <div> Product Name:  {{$product->name}}</div>
+                        <div> Product Price:  {{$product->price}}</div>
+                        <div> Product Quantity:  {{$product->pivot->quantity}}</div>
+                    </div>
+                    @endforeach
+                </div>
+        </div>
+
         <div class="row">
             <div class="col-md-12">
 
                 <div class="panel panel-bordered" style="padding-bottom:5px;">
 
                     <div class="panel-heading" style="border-bottom:0;">
-                        <h3 class="panel-title">Products for this Order</h3>
-
-                    </div>
-
-                    <div class="panel-body" style="padding-top:0;">
-                        <ul>
-                            @foreach ($products as $product)
-                              <li style="margin-bottom:10px">
-                                  <div><img src="{{asset('storage/'.$product->image)}}" alt="" srcset="" width="100px"></div>
-                                  <div>Product Id:  {{$product->id}}</div>
-                                  <div>Product Name:  {{$product->name}}</div>
-                                  <div>Product Price:  {{$product->price}}</div>
-                                  <div>Product Quantity:  {{$product->pivot->quantity}}</div>
-                                </li>
-                            @endforeach
-                        </ul>
+                        <h3 class="panel-title text-center page-header">Order Information</h3>
                     </div>
 
                     <!-- form start -->
@@ -66,10 +84,10 @@
                             $dataTypeContent->{$row->field} = $dataTypeContent->{$row->field.'_read'};
                         }
                         @endphp
-                        <div class="panel-heading" style="border-bottom:0;">
+
+                        <div class="panel-heading " style="border-bottom:0;">
                             <h3 class="panel-title">{{ $row->getTranslatedAttribute('display_name') }}</h3>
                         </div>
-
 
                         <div class="panel-body" style="padding-top:0;">
 
@@ -153,6 +171,7 @@
                                 <p>{{ $dataTypeContent->{$row->field} }}</p>
                             @endif
                         </div><!-- panel-body -->
+
                         @if(!$loop->last)
                             <hr style="margin:0;">
                         @endif
