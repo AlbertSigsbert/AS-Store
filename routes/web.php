@@ -1,7 +1,7 @@
 <?php
 
-
-
+use App\Mail\OrderPlaced;
+use App\Order;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -39,6 +39,11 @@ Route::delete('/coupon' , 'CouponsController@destroy')->name('coupon.destroy');
 
 Route::get('/thankyou' , 'ConfirmationController@index')->name('confirmation.index');
 
+Route::get('/mailable' , function () {
+    $order = Order::find(1);
+
+    return new OrderPlaced($order);
+});
 
 Route::group(['prefix' => 'admin'], function () {
     Voyager::routes();
