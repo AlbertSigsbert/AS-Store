@@ -16,6 +16,7 @@
         "intervention/image": "^2.5",
         "laravel/framework": "^7.24",
         "laravel/tinker": "^2.0",
+        "nicolaslopezj/searchable": "^1.13",
         "olimortimer/laravelshoppingcart": "^4.0",
         "stripe/stripe-php": "^7.60",
         "tcg/voyager": "^1.4"

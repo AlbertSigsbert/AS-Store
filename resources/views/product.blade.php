@@ -1,18 +1,30 @@
 @extends('partials.pagetemplate')
 
+@section('title' , 'Product')
+
 @section('page-content')
 
-<div class="lining ">
-    <div class="container  flex">
-         <a href="/"><h6>Home</h6></a>
-         <i class="fa fa-chevron-right"></i>
-         <a href="{{route('shop.index')}}"><h6>Shop</h6></a>
-         <i class="fa fa-chevron-right"></i>
-         <a href="#"> <h6>{{$product->name}}</h6></a>
+<div class="lining">
+    <div class="lining-items container">
+        <div class="lining-links">
+            <a href="/"><h6>Home</h6></a>
+            <i class="fa fa-chevron-right"></i>
+            <a href="{{route('shop.index')}}"><h6>Shop</h6></a>
+            <i class="fa fa-chevron-right"></i>
+            <a href="#"> <h6>{{$product->name}}</h6></a>
+       </div>
+       <div>
+           @include('partials.search')
+       </div>
     </div>
 </div>
 
+ <div class="container">
+    @include('partials.messages')
+ </div>
+
 <div class="product-section container padding-large">
+
     <div>
         <div class="product-section-image">
             {{-- <img src="{{asset('images/Products/'.$product->slug.'.jpg')}}" alt="">  ---}}

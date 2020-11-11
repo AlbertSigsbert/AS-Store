@@ -1,7 +1,9 @@
 @extends('partials.pagetemplate')
 
+@section('title' , 'Thankyou')
+
 @section('page-content')
- 
+
       <div class="thanks">
         <span>Thank You</span>
         <span>For</span>
@@ -9,5 +11,5 @@
         <p>A confirmation email was sent.</p>
         <a href="{{route('landing-page') }}" class="btn-primary">Home</a>
       </div>
-  
+
 @endsection

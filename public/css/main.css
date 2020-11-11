@@ -303,15 +303,18 @@ footer .footer-content .fa-twitter {
   padding: 13px 0;
 }
 
-.lining .flex {
+.lining .lining-items {
   display: flex;
+  justify-content: space-between;
 }
 
-.lining .flex h6 {
-  font-size: 0.8em;
+.lining .lining-links {
+  display: flex;
+  font-size: 1.2em;
+  margin-top: 5px;
 }
 
-.lining .flex i {
+.lining .lining-links i {
   font-size: 0.8em;
   padding: 2.5px;
   margin-top: 2px;
@@ -320,6 +323,24 @@ footer .footer-content .fa-twitter {
 .section-description {
   width: 80%;
   margin: auto;
+}
+
+.search-form {
+  position: relative;
+}
+
+.search-icon {
+  color: gray;
+  position: absolute;
+  top: 12px;
+  left: 12px;
+}
+
+.search-box {
+  padding: 10px 12px 10px 34px;
+  width: 400px;
+  max-width: 100%;
+  font-size: 14px;
 }
 
 .alert {
@@ -854,5 +875,10 @@ header {
 .thanks p {
   font-family: "Montserrat", sans-serif;
   padding: 1.2em;
+}
+
+.search-results-container {
+  min-height: 600px;
+  margin: 20px 0;
 }
 

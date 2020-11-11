@@ -39,11 +39,14 @@ Route::delete('/coupon' , 'CouponsController@destroy')->name('coupon.destroy');
 
 Route::get('/thankyou' , 'ConfirmationController@index')->name('confirmation.index');
 
-Route::get('/mailable' , function () {
+
+/*Route::get('/mailable' , function () {
     $order = Order::find(1);
 
     return new OrderPlaced($order);
-});
+});*/
+
+Route::get('/search' , 'ShopController@search')->name('search');
 
 Route::group(['prefix' => 'admin'], function () {
     Voyager::routes();

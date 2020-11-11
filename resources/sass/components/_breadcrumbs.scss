@@ -2,12 +2,14 @@
     background:darken($gray-background, 5%);
     padding: 13px 0;
 
-    .flex{
+    .lining-items{
         display: flex;
-    
-       h6{
-           font-size: .8em;
-       }
+        justify-content: space-between;
+    }
+    .lining-links{
+        display: flex;
+        font-size: 1.2em;
+        margin-top: 5px;
 
        i{
            font-size: .8em;

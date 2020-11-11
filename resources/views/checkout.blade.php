@@ -1,5 +1,7 @@
 @extends('partials.pagetemplate')
 
+@section('title' , 'Checkout')
+
 @section('page-content')
 <div class="container">
     @include('partials.messages')

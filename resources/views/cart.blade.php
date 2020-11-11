@@ -1,11 +1,16 @@
 @extends('partials.pagetemplate')
 
 @section('page-content')
-<div class="lining ">
-    <div class="container  flex">
-         <a href="/"><h6>Home</h6></a>
-         <i class="fa fa-chevron-right"></i>
-         <a href="#"> <h6>Shopping Cart</h6></a>
+<div class="lining">
+    <div class="lining-items container">
+        <div class="lining-links">
+            <a href="/"><h6>Home</h6></a>
+            <i class="fa fa-chevron-right"></i>
+            <a href="#"> <h6>Shopping Cart</h6></a>
+       </div>
+       <div>
+           @include('partials.search')
+       </div>
     </div>
 </div>
 

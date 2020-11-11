@@ -74,4 +74,26 @@ class ShopController extends Controller
 
     }
 
+    /**
+     * Store a newly created resource in storage.
+     *
+     * @param  \Illuminate\Http\Request  $request
+     * @return \Illuminate\Http\Response
+     */
+    public function search(Request $request)
+    {
+        $request->validate([
+            'query' => 'required|min:3',
+        ]);
+        $query = $request->input('query');
+
+        // $products = Product::where('name', 'like' , "%$query%")
+                           //->orWhere('details', 'like' , "%$query%")
+                           //->orWhere('description', 'like' , "%$query%")
+                           //->paginate(10);
+        //
+        $products = Product::search($query)->paginate(10);
+
+        return view('search-results')->with('products' , $products);
+    }
 }
