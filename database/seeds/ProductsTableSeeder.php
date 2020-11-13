@@ -382,5 +382,25 @@ class ProductsTableSeeder extends Seeder
     // Select random entries to be featured
     //Product::whereIn('id', [1, 12, 22, 31, 41, 43, 47, 51, 53,61, 69, 73, 80])->update(['featured' => true]);
 
+
+    //TV
+    Product::create([
+        'name'=> 'LG CX OLED',
+        'slug'=>'lg-cx-oled',
+        'details' => 'Available Screen Sizes: 48, 55, 65, 77 inches | Screen Type: OLED | Refresh Rate: 120 Hz |
+                       HDMI ports: 4 HDMI 2.1, 2 USB | Size: 57.0 x 32.7 x 1.8 inches | Weight: 52.9 pounds',
+        'price' => 1897,
+        'description' => 'The LG CX OLED is the best 4K smart TV overall, and the standout TV of 2020,
+                          with an amazing display, built-in Google Assistant and Amazon Alexa support,
+                          and a ton of other smart features. From LGs webOS 5.0 to the addition of
+                          smart home control and an intuitive motion-control remote, its one of the smartest TVs weve ever seen.
+                          LG has improved on its superb OLED with a more powerful processor,
+                          the addition of Dolby Vision IQ (which adjusts HDR performance based on the ambient lighting)
+                           and beefs up the sound with AI-powered audio tuning. And while the LG CX OLEDs premium price might
+                           put off some shoppers, it packs in more premium value than more expensive OLED competitors,
+                            while still delivering an unparalleled picture. Its the TV to beat.',
+        'featured' => 0,
+        'image'=> 'products\dummy\lg-cx-oled.jpg'
+    ])->categories()->attach(5);
  }
 }

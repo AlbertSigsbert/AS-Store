@@ -388,7 +388,7 @@ class ProductsController extends VoyagerBaseController
 
     }
 
-    protected function updateProductCategories()
+    protected function updateProductCategories(Request $request, $id)
     {
 
         if($request->category)
@@ -396,7 +396,7 @@ class ProductsController extends VoyagerBaseController
             foreach ($request->category as $category)
             {
                 CategoryProduct::create([
-                    'product_id' => $data->id ,
+                    'product_id' => $id ,
                     'category_id' => $category
                 ]);
             }
