@@ -845,6 +845,7 @@ header {
   display: grid;
   grid-template-columns: 1fr 3fr;
   margin-top: 1em;
+  min-height: 600px;
 }
 
 .left-panel {
