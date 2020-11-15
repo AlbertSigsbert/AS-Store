@@ -96,4 +96,16 @@ class ShopController extends Controller
 
         return view('search-results')->with('products' , $products);
     }
+
+    /**
+     * Store a newly created resource in storage.
+     *
+     * @param  \Illuminate\Http\Request  $request
+     * @return \Illuminate\Http\Response
+     */
+    public function searchAlgolia(Request $request)
+    {
+
+        return view('search-results-algolia');
+    }
 }
