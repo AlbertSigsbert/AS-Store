@@ -66,10 +66,14 @@ class EcommerceInstall extends Command
              }
 
              //DB Sync
-             $this->call('migrate:fresh', [
-                '--seed' => true,
-                '--force' => true,
-            ]);
+             try {
+                $this->call('migrate:fresh', [
+                    '--seed' => true,
+                    '--force' => true,
+                ]);
+            } catch (\Exception $e) {
+                $this->error('Algolia credentials incorrect. Your products table is NOT seeded correctly. If you are not using Algolia, remove Searchable trait from App\Product');
+            }
 
             $this->call('db:seed', [
                 '--class' => 'VoyagerDatabaseSeeder',
