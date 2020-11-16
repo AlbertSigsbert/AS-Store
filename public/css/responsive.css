@@ -59,6 +59,26 @@
   .footer-content ul li:nth-child(1) {
     display: none;
   }
+
+  /* Auth pages */
+
+  .auth-pages {
+    margin: 40px auto;
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-gap: 40px;
+  }
+
+  .auth-pages .auth-left,
+  .auth-pages .auth-right {
+    margin: 0 auto;
+    width: 80%;
+  }
+
+  .auth-pages .auth-right {
+    border-left: none;
+    padding-left: 20px;
+  }
 }
 
 /****Small Devices , Tablets ****/

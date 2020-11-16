@@ -1,3 +1,7 @@
+
+//Abstracts
+@import 'abstracts/variables';
+
 /****Non mobile first method *****/
 
 /****Large Devices , Wide Screens ****/
@@ -27,13 +31,13 @@
         text-align: center;
     }
 
-    
+
         .products{
             grid-template-columns: 1fr;
             width: 80%;
             margin: auto;
         }
-    
+
 
     .blog-section{
         .blog-posts{
@@ -53,30 +57,50 @@
         ul{
             margin: 20px auto;
             width: 60%;
-            
+
             li:nth-child(1){
                 display: none;
             }
         }
     }
-}
 
+    /* Auth pages */
+    .auth-pages
+    {
+        margin: 40px auto;
+        display: grid;
+        grid-template-columns: 1fr;
+        grid-gap:40px;
+
+        .auth-left , .auth-right
+        {
+            margin: 0 auto;
+            width: 80%;
+        }
+
+        .auth-right
+        {
+        border-left: none;
+        padding-left: 20px;
+        }
+   }
+}
 
 /****Small Devices , Tablets ****/
 @media all and (max-width:768px){
-    
+
 }
 
 /****Extra Small Devices , Phones****/
 @media all and (max-width:480px){
-    
+
 }
 
 /****Custom , iPhone Retina****/
 @media all and (max-width:370px){
 
     header{
-        
+
          .top-nav{
              padding: 20px 0;
              font-size: .9em;
@@ -95,7 +119,7 @@
             margin-top: 20px;
         }
     }
-    .button{   
+    .button{
         padding: 8px 20px;
     }
 }

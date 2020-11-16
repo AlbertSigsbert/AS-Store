@@ -23,7 +23,7 @@
          @yield('page-content')
 
 
-         @if( Route::is('confirmation.index') || Route::is('register') ||  Route::is('login'))
+         @if( Route::is('confirmation.index') )
            @include('partials.stickyfooter')
 
          @else
