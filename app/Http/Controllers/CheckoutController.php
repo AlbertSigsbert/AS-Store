@@ -140,6 +140,10 @@ class CheckoutController extends Controller
         $discount = session()->get('coupon')['discount'] ?? 0; //Null coalescing operator since php 7
         $code = session()->get('coupon')['name'] ?? null ;
         $newSubtotal = ($subTotal - $discount);
+        if($newSubtotal < 0)
+        {
+             $newSubtotal = 0;
+        }
         $newTax = $newSubtotal * $tax ;
         $newTotal = $newSubtotal + $newTax;
 
