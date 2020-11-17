@@ -33,22 +33,13 @@ class CheckoutController extends Controller
        }
 
         return view('checkout')->with([
-            'discount' => $this->getNumbers()->get('discount'),
-            'newSubtotal' => $this->getNumbers()->get('newSubtotal'),
-            'newTax' =>  $this->getNumbers()->get('newTax'),
-            'newTotal' => $this->getNumbers()->get('newTotal')
+            'discount' => getNumbers()->get('discount'),
+            'newSubtotal' => getNumbers()->get('newSubtotal'),
+            'newTax' =>  getNumbers()->get('newTax'),
+            'newTotal' => getNumbers()->get('newTotal')
             ]);
     }
 
-    /**
-     * Show the form for creating a new resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
-    public function create()
-    {
-        //
-    }
 
     /**
      * Store a newly created resource in storage.
@@ -65,7 +56,7 @@ class CheckoutController extends Controller
         try
          {
            $charge = Stripe::charges()->create([
-               'amount' => $this->getNumbers()->get('newTotal'),
+               'amount' => getNumbers()->get('newTotal'),
                'currency' => 'usd',
                 'source' => $request->stripeToken,
                 'description' => 'Order',
@@ -110,11 +101,11 @@ class CheckoutController extends Controller
             'billing_postalcode' => $request->postalcode,
             'billing_phone' => $request->phone,
             'billing_name_on_card' => $request->name_on_card,
-            'billing_discount' =>  $this->getNumbers()->get('discount'),
-            'billing_discount_code' =>$this->getNumbers()->get('code'),
-            'billing_subtotal' =>  $this->getNumbers()->get('newSubtotal'),
-            'billing_tax' =>  $this->getNumbers()->get('newTax'),
-            'billing_total' =>  $this->getNumbers()->get('newTotal'),
+            'billing_discount' =>  getNumbers()->get('discount'),
+            'billing_discount_code' =>getNumbers()->get('code'),
+            'billing_subtotal' =>  getNumbers()->get('newSubtotal'),
+            'billing_tax' =>  getNumbers()->get('newTax'),
+            'billing_total' =>  getNumbers()->get('newTotal'),
             //'payment_gateway' => '',
             //'shipped' => '',
             'error' => $error,
@@ -130,31 +121,5 @@ class CheckoutController extends Controller
             }
 
             return $order;
-    }
-
-
-    private function getNumbers()
-    {
-        $subTotal = Cart::subtotal();
-        $tax = config('cart.tax') / 100;
-        $discount = session()->get('coupon')['discount'] ?? 0; //Null coalescing operator since php 7
-        $code = session()->get('coupon')['name'] ?? null ;
-        $newSubtotal = ($subTotal - $discount);
-        if($newSubtotal < 0)
-        {
-             $newSubtotal = 0;
-        }
-        $newTax = $newSubtotal * $tax ;
-        $newTotal = $newSubtotal + $newTax;
-
-
-
-        return collect([
-            'discount' => $discount,
-            'newSubtotal' => $newSubtotal,
-            'newTax' => $newTax,
-            'newTotal' => $newTotal,
-            'code'=> $code
-        ]);
     }
 }

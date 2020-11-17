@@ -77,13 +77,19 @@
 
     @endforeach
 
-       <!-- <div class="cart-item-code">
-            <p>Have A Code ?</p>
-            <div class="apply-coupon">
-               <input type="text">
-               <button class="btn-primary">Apply</button>
+            @if (! session()->has('coupon'))
+            <div class="cart-item-code">
+                <p> <strong> Have A Code ?</strong></p>
+                <div class="apply-coupon">
+                    <form action="{{route('coupon.store')}}" method="POST">
+                        @csrf
+                        <input type="text" name="coupon_code" id="coupon_code">
+                        <button type="submit" class="btn-primary">Apply</button>
+                    </form>
+                </div>
             </div>
-        </div>  -->
+        @endif
+
 
         <div class="total-pricing">
             <div class="shipping">
@@ -94,13 +100,28 @@
             <div class="price-calc">
                 <div class="left-pricing">
                     <p>Subtotal </p>
+                    @if (session()->has('coupon'))
+                        Discount ({{ session()->get('coupon') ['name'] }}):
+                        <form action="{{ route('coupon.destroy')}}" method="POST" style="display: inline">
+                            @csrf
+                            @method('DELETE')
+                            <button type="submit" class="btn-transparent">Remove Coupon</button>
+                        </form>
+                        <hr class="margin-sm">
+                        <p>New Subtotal</p>
+                    @endif
                     <p>Tax (18%) </p>
                     <p>Total </p>
                 </div>
                 <div class="right-pricing">
                    <p> ${{Cart::subtotal()}}</p>
-                   <p>${{Cart::tax()}}</p>
-                    <p>${{Cart::total()}}</p>
+                   @if (session()->has('coupon'))
+                   <p>-${{ $discount }}</p>
+                       <br><br><hr style="margin-bottom: 1em; margin-top:3.9px;">
+                   <p>${{ $newSubtotal }}</p>
+                @endif
+                   <p>${{ $newTax }}</p>
+                    <p>${{ $newTotal }}</p>
                 </div>
             </div>
         </div>
@@ -210,7 +231,7 @@
 
       })();
     </script>
-]
+
 <!-- Include AlgoliaSearch JS Client and autocomplete.js library -->
 <script src="https://cdn.jsdelivr.net/algoliasearch/3/algoliasearch.min.js"></script>
 <script src="https://cdn.jsdelivr.net/autocomplete.js/0/autocomplete.min.js"></script>
