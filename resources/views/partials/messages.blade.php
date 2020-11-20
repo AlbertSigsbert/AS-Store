@@ -1,5 +1,5 @@
 
-@if ($errors->any())
+@if (count($errors) > 0)
 <div class="container padding-medium">
     <div class="alert alert-danger">
         <ul class="list-group">

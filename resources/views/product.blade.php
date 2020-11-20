@@ -1,6 +1,6 @@
 @extends('partials.pagetemplate')
 
-@section('title' , 'Product')
+@section('title' , $product->name)
 
 @section('extra-css')
  <link rel="stylesheet" href="{{asset('css/algolia.css')}}">
@@ -51,18 +51,20 @@
     <div class="product-section-info">
         <h3>{{$product->name}}</h3>
         <h5>{{$product->details}}</h5>
+        <h2>{!! $stockLevel !!}</h2>
         <h4>${{$product->price}}</h4>
 
         <p>{!! $product->description !!}</p>
 
-
-        <form action="{{ route('cart.store')}}" method="POST">
-            @csrf
-            <input type="hidden" name="id" value="{{$product->id}}">
-            <input type="hidden" name="name" value="{{$product->name}}">
-            <input type="hidden" name="price" value="{{$product->price}}">
-            <button type="submit" class="btn-primary btn-margin" >Add to Cart</button>
-        </form>
+         @if ($product->quantity > 0)
+            <form action="{{ route('cart.store')}}" method="POST">
+                @csrf
+                <input type="hidden" name="id" value="{{$product->id}}">
+                <input type="hidden" name="name" value="{{$product->name}}">
+                <input type="hidden" name="price" value="{{$product->price}}">
+                <button type="submit" class="btn-primary btn-margin" >Add to Cart</button>
+            </form>
+         @endif
 
     </div>
 </div>

@@ -6,6 +6,7 @@ use App\Http\Requests\CheckoutRequest;
 use App\Mail\OrderPlaced;
 use App\Order;
 use App\OrderProduct;
+use App\Product;
 use Cartalyst\Stripe\Laravel\Facades\Stripe;
 use Exception;
 use Cartalyst\Stripe\Exception\CardErrorException;
@@ -49,6 +50,11 @@ class CheckoutController extends Controller
      */
     public function store(CheckoutRequest $request)
     {
+        //Check race condition when there are less items in stock
+        if($this->productsAreNoLongerAvailable())
+        {
+           return back()->withErrors('Sorry! One of items in your cart is no longer available.');
+        }
         $contents = Cart::content()->map(function($item){
             return $item->model->slug.', '.$item->qty;
         })->values()->toJson();
@@ -74,7 +80,11 @@ class CheckoutController extends Controller
 
            Mail::send( new OrderPlaced($order));
 
-           //SUCCESSFUL
+        //SUCCESSFUL
+
+        //Decrease the quantities of all the products in the cart
+        $this->decreaseQuantities();
+
          Cart::instance('default')->destroy();
          session()->forget('coupon');
 
@@ -121,5 +131,30 @@ class CheckoutController extends Controller
             }
 
             return $order;
+    }
+
+    protected function decreaseQuantities()
+    {
+        foreach(Cart::content() as $item)
+        {
+           $product = Product::find($item->model->id);
+
+           $product->update(['quantity' => $product->quantity - $item->qty]);
+        }
+    }
+
+    protected function productsAreNoLongerAvailable()
+    {
+        foreach(Cart::content() as $item)
+        {
+           $product = Product::find($item->model->id);
+
+           if($product->quantity < $item->qty)
+           {
+               return true;
+           }
+        }
+
+        return false;
     }
 }

@@ -63,15 +63,15 @@ class ShopController extends Controller
     public function show($slug)
     {
         $product = Product::where('slug', $slug)->firstOrFail();
-
         $mightLike = Product::where('slug','!=', $slug)->mightLike()->get();
 
+        $stockLevel = getStockLevel($product->quantity);
+
         return view('product')->with([
-                                        'product'=> $product,
-                                        'mightLike' => $mightLike
-                                        ]);
-
-
+                    'product'=> $product,
+                    'stockLevel' => $stockLevel,
+                    'mightLike' => $mightLike
+            ]);
     }
 
     /**
@@ -105,7 +105,6 @@ class ShopController extends Controller
      */
     public function searchAlgolia(Request $request)
     {
-
         return view('search-results-algolia');
     }
 }

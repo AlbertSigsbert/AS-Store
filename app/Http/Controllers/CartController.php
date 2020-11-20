@@ -58,9 +58,14 @@ class CartController extends Controller
         ]);
 
         if ($validator->fails()) {
-
-        session()->flash('errors' , collect(['Quantity was updated successfully!']));
+        session()->flash('errors' , collect(['Quantity must be between 1 and 5.']));
         return response()->json(['success' => false] ,400);
+        }
+
+        if($request->quantity > $request->productQuantity)
+        {
+            session()->flash('errors' , collect(['We currently do not have enough items in our stock.']));
+            return response()->json(['success' => false] ,400);
         }
 
         Cart::update($id, $request->quantity);
