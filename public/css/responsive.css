@@ -40,7 +40,6 @@
     text-align: center;
     width: 80%;
     margin: auto;
-    grid-template-areas: "blog2" "blog1" "blog3";
   }
 
   .footer-content {

@@ -86,19 +86,5 @@ ul{
         grid-template-columns: repeat(3,1fr);
         grid-gap: $gutter;
         margin: 60px 0;
-        grid-template-areas: "blog1 blog2 blog3";
-
-        #blog1{
-            grid-area: blog1;
-        }
-
-        #blog2{
-            grid-area: blog2;
-        }
-
-        #blog3{
-            grid-area: blog3;
-        }
-
     }
 }

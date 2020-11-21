@@ -8,6 +8,7 @@
         <!--fonts-->
         <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
         <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;500&family=Roboto&display=swap" rel="stylesheet">
+
         <!--styles-->
       <link rel="stylesheet" href="{{asset('css/main.css')}}">
       <link rel="stylesheet" href="{{asset('css/responsive.css')}}">
@@ -21,7 +22,7 @@
                     <ul>
                         <li><a href="{{route('shop.index')}}">Shop</a></li>
                         <li><a href="#">About</a></li>
-                        <li><a href="#">Blog</a></li>
+                        <li><a href="{{route('blog.index')}}">Blog</a></li>
                     </ul>
                </div>
                <div class="top-nav-right">
@@ -98,32 +99,15 @@
                     </p>
 
                     <div class="blog-posts">
-                        <div class="blog-post"id="blog1">
-                            <a href=""><img src="images/blog1.jpg" alt="blog-post-image"></a>
-                            <a href=""><h2 class="blog-title">Blog post Title 1</h2></a>
-                            <div class="blog-description">
-                                Lorem, ipsum dolor sit amet
-                                consectetur adipisicing elit. Ducimus, eaque? Nisi, neque.
+                        @foreach ($posts as $post)
+                            <div class="blog-post"id="blog1">
+                                <a href="{{ route('blog.show',$post->slug)}}"><img src="{{ productImage($post->image) }}" alt="blog-post-image"></a>
+                                <a href="{{ route('blog.show',$post->slug)}}"><h2 class="blog-title">{{ $post->title}}</h2></a>
+                                <div class="blog-description">
+                                    {{ \Illuminate\Support\Str::limit($post->excerpt ,120 ) }}
+                                </div>
                             </div>
-                        </div>
-
-                        <div class="blog-post"id="blog2">
-                            <a href=""><img src="images/blog2.jpg" alt="blog-post-image"></a>
-                            <a href=""><h2 class="blog-title">Blog post Title 1</h2></a>
-                            <div class="blog-description">
-                                Lorem, ipsum dolor sit amet
-                                consectetur adipisicing elit. Ducimus, eaque? Nisi, neque.
-                            </div>
-                        </div>
-
-                        <div class="blog-post"id="blog3">
-                            <a href=""><img src="images/blog3.jpg" alt="blog-post-image"></a>
-                            <a href=""><h2 class="blog-title">Blog post Title 1</h2></a>
-                            <div class="blog-description">
-                                Lorem, ipsum dolor sit amet
-                                consectetur adipisicing elit. Ducimus, eaque? Nisi, neque.
-                            </div>
-                        </div>
+                        @endforeach
                     </div><!--end of blogposts-->
                </div><!--end of container-->
            </div><!--end of blog section-->

@@ -49,7 +49,8 @@ Route::get('/thankyou' , 'ConfirmationController@index')->name('confirmation.ind
 Route::get('/search' , 'ShopController@search')->name('search');
 Route::get('/search-algolia' , 'ShopController@searchAlgolia')->name('search-algolia');
 
-
+Route::get('/blog' , 'BlogController@index')->name('blog.index');
+Route::get('/blog/{slug}' , 'BlogController@show')->name('blog.show');
 
 Route::group(['prefix' => 'admin'], function () {
     Voyager::routes();

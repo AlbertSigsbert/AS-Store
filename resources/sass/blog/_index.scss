@@ -1,0 +1,33 @@
+.w-100 {
+    width: 100% !important;
+    height: 90vh;
+  }
+
+  .blog-post-image
+  {
+        position: relative;
+        background-color: Black;
+        & img{
+           // height: 90vh;
+            opacity: .5;
+        }
+  }
+
+  .post-info{
+      position: absolute;
+      left: 15%;
+      bottom: 15%;
+      font-weight: bold;
+      width: 35%;
+  }
+ .post-description p{
+    font-family: 'Roboto', sans-serif;
+    font-style: italic;
+    font-size: 2em;
+    line-height: 1;
+  }
+  .post-body{
+    font-family: 'Montserrat', sans-serif;
+    line-height: 1.6;
+    font-size: 1.2rem;
+  }

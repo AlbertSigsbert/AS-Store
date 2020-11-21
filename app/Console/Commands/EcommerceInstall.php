@@ -56,11 +56,14 @@ class EcommerceInstall extends Command
     protected function proceed()
     {
         File::deleteDirectory( public_path('storage/products/dummy'));
+        File::deleteDirectory( public_path('storage/blog'));
 
             $this->callSilent('storage:link');
              $copySuccess = File::copyDirectory(public_path('images/Products') , public_path('storage/products/dummy'));
 
-             if($copySuccess)
+             $copySuccess2 = File::copyDirectory(public_path('images/Blog') , public_path('storage/blog'));
+
+             if($copySuccess && $copySuccess2)
              {
                  $this->info('Images successfully copied into storage folder');
              }
