@@ -248,12 +248,14 @@
                       <p><strong>Payment Gateway:</strong> {{$order->payment_gateway}}</p>
                       <p><strong>Order date:</strong> {{$order->created_at}}</p>
                  </div>
+                 @if($order->billing_address != null)
                  <div class="shipping-address">
                     <h3>Shipping Adress</h3>
                      <p><strong>Address:</strong> {{$order->billing_address}}</p>
                      <p><strong>City:</strong> {{$order->billing_city}}</p>
                     <p><strong>Province: </strong> {{$order->billing_province}}</p>
                  </div>
+                 @endif
             </div>
         </section>
         <section class="promo">

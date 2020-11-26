@@ -33,7 +33,23 @@ class CheckoutController extends Controller
           return redirect()->route('checkout.index');
        }
 
+
+        $gateway = new \Braintree\Gateway([
+            'environment' => config('services.braintree.environment'),
+            'merchantId' => config('services.braintree.merchantId'),
+            'publicKey' => config('services.braintree.publicKey'),
+            'privateKey' => config('services.braintree.privateKey')
+        ]);
+
+
+        try {
+            $paypalToken = $gateway->ClientToken()->generate();
+        } catch (\Exception $e) {
+            $paypalToken = null;
+        }
+
         return view('checkout')->with([
+            'paypalToken' => $paypalToken,
             'discount' => getNumbers()->get('discount'),
             'newSubtotal' => getNumbers()->get('newSubtotal'),
             'newTax' =>  getNumbers()->get('newTax'),
@@ -98,6 +114,67 @@ class CheckoutController extends Controller
         }
     }
 
+
+ /**
+     * Store a newly created resource in storage.
+     *
+     * @param  \Illuminate\Http\Request  $request
+     * @return \Illuminate\Http\Response
+     */
+    public function paypalCheckout(Request $request)
+    {
+        // Check race condition when there are less items available to purchase
+        if ($this->productsAreNoLongerAvailable()) {
+            return back()->withErrors('Sorry! One of the items in your cart is no longer avialble.');
+        }
+
+        $gateway = new \Braintree\Gateway([
+            'environment' => config('services.braintree.environment'),
+            'merchantId' => config('services.braintree.merchantId'),
+            'publicKey' => config('services.braintree.publicKey'),
+            'privateKey' => config('services.braintree.privateKey')
+        ]);
+
+        $nonce = $request->payment_method_nonce;
+
+        $result = $gateway->transaction()->sale([
+            'amount' => round(getNumbers()->get('newTotal'), 2),
+            'paymentMethodNonce' => $nonce,
+            'options' => [
+                'submitForSettlement' => true
+            ]
+        ]);
+
+        $transaction = $result->transaction;
+
+        if ($result->success) {
+            $order = $this->addToOrdersTablesPaypal(
+                $transaction->paypal['payerEmail'],
+                $transaction->paypal['payerFirstName'].' '.$transaction->paypal['payerLastName'],
+                null
+            );
+
+            Mail::send(new OrderPlaced($order));
+
+            // decrease the quantities of all the products in the cart
+            $this->decreaseQuantities();
+
+            Cart::instance('default')->destroy();
+            session()->forget('coupon');
+
+            return redirect()->route('confirmation.index')->with('success', 'Thank you! Your payment has been successfully accepted!');
+        } else {
+            $order = $this->addToOrdersTablesPaypal(
+                $transaction->paypal['payerEmail'],
+                $transaction->paypal['payerFirstName'].' '.$transaction->paypal['payerLastName'],
+                $result->message
+            );
+
+            return back()->withErrors('An error occurred with the message: '.$result->message);
+        }
+    }
+
+
     protected function addToOrdersTables($request , $error)
     {
         //Insert into order table
@@ -132,6 +209,36 @@ class CheckoutController extends Controller
 
             return $order;
     }
+
+    protected function addToOrdersTablesPaypal($email, $name , $error)
+    {
+        //Insert into order table
+        $order = Order::create([
+            'user_id' => auth()->user() ? auth()->user()->id : null ,
+            'billing_email'=> $email,
+            'billing_name' => $name,
+            'billing_discount' =>  getNumbers()->get('discount'),
+            'billing_discount_code' =>getNumbers()->get('code'),
+            'billing_subtotal' =>  getNumbers()->get('newSubtotal'),
+            'billing_tax' =>  getNumbers()->get('newTax'),
+            'billing_total' =>  getNumbers()->get('newTotal'),
+            //'shipped' => '',
+            'error' => $error,
+            'payment_gateway' => 'paypal',
+        ]);
+            //Insert into order_product table
+            foreach (Cart::content() as $item)
+            {
+                OrderProduct::create([
+                    'order_id' => $order->id,
+                    'product_id' => $item->model->id,
+                    'quantity' => $item->qty
+                ]);
+            }
+
+            return $order;
+    }
+
 
     protected function decreaseQuantities()
     {

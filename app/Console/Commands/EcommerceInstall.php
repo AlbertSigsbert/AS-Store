@@ -55,6 +55,11 @@ class EcommerceInstall extends Command
 
     protected function proceed()
     {
+        File::deleteDirectory(public_path('storage/products'));
+        File::deleteDirectory(public_path('storage/settings'));
+        File::deleteDirectory(public_path('storage/pages'));
+        File::deleteDirectory(public_path('storage/posts'));
+        File::deleteDirectory(public_path('storage/users'));
         File::deleteDirectory( public_path('storage/products/dummy'));
         File::deleteDirectory( public_path('storage/blog'));
 
@@ -68,6 +73,9 @@ class EcommerceInstall extends Command
                  $this->info('Images successfully copied into storage folder');
              }
 
+             File::copyDirectory(public_path('images/pages'), public_path('storage/pages'));
+             File::copyDirectory(public_path('images/posts'), public_path('storage/posts'));
+             File::copyDirectory(public_path('images/users'), public_path('storage/users'));
              //DB Sync
              try {
                 $this->call('migrate:fresh', [
@@ -75,7 +83,7 @@ class EcommerceInstall extends Command
                     '--force' => true,
                 ]);
             } catch (\Exception $e) {
-                $this->error('Algolia credentials incorrect. Your products table is NOT seeded correctly. If you are not using Algolia, remove Searchable trait from App\Product');
+                $this->error('Algolia credentials incorrect. Your products table is NOT seeded correctly. If you are not using Algolia, remove Laravel\Scout\Searchable from App\Product');
             }
 
             $this->call('db:seed', [
@@ -128,13 +136,24 @@ class EcommerceInstall extends Command
                 '--force' => true,
             ]);
 
-            $this->call('scout:clear', [
-                'model' => 'App\\Product',
+            $this->call('db:seed', [
+                '--class' => 'SettingsTableSeederCustom',
+                '--force' => true,
             ]);
 
-            $this->call('scout:import', [
-                'model' => 'App\\Product',
-            ]);
+            try {
+                $this->call('scout:clear', [
+                    'model' => 'App\\Product',
+                ]);
+
+                $this->call('scout:import', [
+                    'model' => 'App\\Product',
+                ]);
+            }
+            catch (\Exception $e)
+            {
+                $this->error('Algolia credentials incorrect. Check your .env file. Make sure ALGOLIA_APP_ID and ALGOLIA_SECRET are correct.');
+            }
 
              $this->info('Dummy data installed.');
     }

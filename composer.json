@@ -10,6 +10,7 @@
     "require": {
         "php": "^7.3.0",
         "algolia/algoliasearch-client-php": "^2.2",
+        "braintree/braintree_php": "^5.4",
         "cartalyst/stripe-laravel": "^12.0",
         "fideloper/proxy": "^4.2",
         "fruitcake/laravel-cors": "^2.0",

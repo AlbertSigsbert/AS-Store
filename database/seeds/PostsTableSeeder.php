@@ -334,7 +334,7 @@ class PostsTableSeeder extends Seeder
                 'meta_description' => 'This is the meta description',
                 'meta_keywords'    => 'keyword1, keyword2, keyword3',
                 'status'           => 'PUBLISHED',
-                'featured'         => 0,
+                'featured'         => 1,
             ])->save();
         }
 
@@ -353,7 +353,7 @@ class PostsTableSeeder extends Seeder
                 'meta_description' => 'Meta Description for sample post',
                 'meta_keywords'    => 'keyword1, keyword2, keyword3',
                 'status'           => 'PUBLISHED',
-                'featured'         => 0,
+                'featured'         => 1,
             ])->save();
         }
 
@@ -370,7 +370,7 @@ class PostsTableSeeder extends Seeder
                 'meta_description' => 'This is the meta description',
                 'meta_keywords'    => 'keyword1, keyword2, keyword3',
                 'status'           => 'PUBLISHED',
-                'featured'         => 0,
+                'featured'         => 1,
             ])->save();
         }
 
