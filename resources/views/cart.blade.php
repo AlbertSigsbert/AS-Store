@@ -20,7 +20,7 @@
     </div>
 </div>
 
- <div class="container ">
+ <div class="container">
      <div class="wrapper">
          @include('partials.messages')
 
@@ -126,7 +126,7 @@
             </div>
         </div>
 
-        <div class="cart-buttons ">
+        <div class="cart-buttons">
             <a class="btn-transparent" href="{{route('shop.index')}}">Continue Shopping</a>
             <a class="btn-green text-white" href="{{route('checkout.index')}}">Proceed To Checkout</a>
         </div>

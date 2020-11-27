@@ -34,12 +34,6 @@
            @endforeach
        </ul>
 
-      {{--<h3 class=" padding-medium">By Price</h3>
-       <ul>
-           <li>$0-$700</li>
-           <li>$700-$2500</li>
-           <li>$2500+</li>
-       </ul>--}}
     </div>
 
     <div class="right-panel padding-medium">

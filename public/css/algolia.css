@@ -92,3 +92,10 @@
   .ais-hits--item em {
     background-color: rgba(58, 150, 207, 0.3);
   }
+
+  /****Custom , iPhone Retina****/
+@media all and (max-width:480px){
+    .aa-input-search , .aa-dropdown-menu {
+        width: 200px;
+    }
+}

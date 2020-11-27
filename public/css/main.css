@@ -95,7 +95,7 @@ img {
 .line {
   height: 5px;
   background-color: gray;
-  width: 10%;
+  width: 75%;
 }
 
 .margin-sm {
@@ -625,6 +625,15 @@ footer .footer-content .fa-twitter {
   display: grid;
   grid-template-columns: 1fr 1fr;
   grid-gap: 5em;
+  grid-template-areas: "checkout-form checkout-information";
+}
+
+.checkout-content #checkout-form {
+  grid-area: checkout-form;
+}
+
+.checkout-content #checkout-information {
+  grid-area: checkout-information;
 }
 
 .checkout-form {
@@ -787,6 +796,8 @@ header {
   color: #d0d0d0;
 }
 
+/*  Hero  */
+
 .hero {
   display: grid;
   grid-template-columns: 1fr 1fr;
@@ -898,7 +909,7 @@ header {
 }
 
 .left-panel {
-  font-size: 0.8em;
+  font-size: 1.2em;
 }
 
 .featured h1 {

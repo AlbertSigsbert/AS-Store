@@ -3,16 +3,17 @@
 @section('title' , 'Checkout')
 
 @section('page-content')
+
 <div class="container">
     @include('partials.messages')
-    <div class="featured padding-medium">
+    <div class="featured padding-medium checkout-featured">
         <hr class="line">
             <h1>Checkout</h1>
         <hr class="line">
     </div>
 
  <div class="checkout-content">
-    <div class="checkout-form">
+    <div class="checkout-form" id="checkout-form">
 
         <h3 class="padding-medium">Billing Details</h3>
 
@@ -102,7 +103,7 @@
         @endif
     </div>
 
-        <div class="checkout-information">
+        <div class="checkout-information" id="checkout-information">
 
              <h2 class="padding-medium">Your Order</h2>
 

@@ -15,7 +15,7 @@
     </head>
 
 <body>
-       <header>
+        <header>
            <div class="top-nav container">
                <div class="top-nav-left">
                     <div class="logo">Laravel Ecommerce</div>
@@ -36,8 +36,8 @@
                    <p>Includes multiple products,categories,a shopping cart and a checkout system with Stripe Integration.
                     </p>
                     <div class="hero-buttons container">
-                        <a href="#" class="button button-white">Button 1</a>
-                        <a href="#" class="button button-white">Button 2</a>
+                        <a href="https://github.com/Albert123Dev" class="button button-white">Github</a>
+                        <a href="#" class="button button-white">Website</a>
                     </div>
                </div><!-- End of hero content -->
 
