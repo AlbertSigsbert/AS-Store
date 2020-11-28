@@ -21,10 +21,6 @@
     flex-direction: column;
   }
 
-  header .top-nav .top-nav-left .logo {
-    margin: auto;
-  }
-
   header .top-nav ul {
     align-items: center;
     justify-content: center;
@@ -162,6 +158,20 @@
     justify-content: center;
   }
 
+  /* Blog Page */
+
+  .w-100 {
+    height: auto;
+  }
+
+  .post-info {
+    display: none;
+  }
+
+  .post-description p {
+    font-size: 1em;
+  }
+
   .blog-section .blog-posts {
     grid-template-columns: 1fr;
     text-align: center;
@@ -264,6 +274,8 @@
   }
 }
 
+/****Custom xs small****/
+
 @media all and (max-width: 290px) {
   .total-pricing .price-calc {
     font-size: 0.8em;
@@ -272,6 +284,14 @@
 
   .total-pricing .price-calc .left-pricing {
     margin-right: 0.5em;
+  }
+}
+
+/****Custom ipad Pro ****/
+
+@media all and (width: 1024px) {
+  .post-info {
+    display: none;
   }
 }
 

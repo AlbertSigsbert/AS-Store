@@ -6,9 +6,7 @@
 
 /****Large Devices , Wide Screens ****/
 @media all and (max-width:1200px){
-  .container{
-      max-width: 960px;
-  }
+  .container{ max-width: 960px; }
 }
 
 /****Medium Devices , Desktops ****/
@@ -19,12 +17,7 @@
             flex-direction: column;
             justify-content: center;
 
-            .top-nav-left{
-                flex-direction: column;
-                .logo{
-                    margin: auto;
-                }
-            }
+            .top-nav-left{ flex-direction: column; }
 
             ul{
                 align-items: center;
@@ -42,23 +35,16 @@
         justify-content: center;
         margin: 20px 0;
 
-        .lining-links{
-          display: none;
-        }
+        .lining-links{ display: none;   }
 
-        .aa-input-container{
-            margin-bottom: 1em;
-
-        }
+        .aa-input-container{ margin-bottom: 1em; }
     }
 
     /* Shop page */
     .panels{
         grid-template-columns: 1fr;
 
-        .left-panel{
-            margin: 0 auto;
-        }
+        .left-panel{ margin: 0 auto; }
     }
 
     .products-header{
@@ -69,9 +55,7 @@
         .featured{ margin-bottom: 2em;}
     }
 
-      .pagination{
-          margin: 0 5em;
-        }
+      .pagination{ margin: 0 5em;  }
 
     /* Landing Page Hero */
     .hero{
@@ -79,7 +63,6 @@
         text-align: center;
         padding: 0 40px;
      }
-
 
         .products{
             grid-template-columns: 1fr;
@@ -95,25 +78,17 @@
         }
 
         /* Cart Page */
-        .wrapper{
-            margin: 0 auto;
-        }
+        .wrapper{ margin: 0 auto; }
 
         .cart-item{
             flex-direction: column;
             .cart-details{
                 width: 90%;
-                p{
-                    font-size: 1em;
-                }
+                p{  font-size: 1em;  }
             }
 
-            .cart-options{
-                font-size: large;
-              }
-
+            .cart-options{ font-size: large; }
           }
-
           .total-pricing{
               flex-direction: column;
               padding: 1em .5em;
@@ -126,9 +101,7 @@
               font-size: 1em;
               width: 90%;
 
-              .left-pricing{
-                  margin-right: 1.5em;
-              }
+              .left-pricing{ margin-right: 1.5em; }
           }
       }
 
@@ -157,6 +130,12 @@
         margin-top: 1em;
         justify-content: center;
     }
+     /* Blog Page */
+    .w-100 { height: auto; }
+
+    .post-info{  display: none;   }
+
+     .post-description p{ font-size: 1em; }
 
     .blog-section{
         .blog-posts{
@@ -211,9 +190,7 @@
 
 /****Extra Small Devices , Phones****/
 @media all and (max-width:480px){
-    .search-box {
-        width: 200px;
-    }
+    .search-box { width: 200px; }
 
     .pagination > li > a, .pagination > li > span {
        padding: 8px 11px;
@@ -231,15 +208,12 @@
 @media all and (max-width:370px){
 
     header{
-
          .top-nav{
              padding: 20px 0;
              font-size: .9em;
 
-             .logo{
-                display: none;
-            }
-         }
+         .logo{ display: none;}
+        }
     }
     .hero-content{
         width: 80%;
@@ -255,27 +229,28 @@
             display: flex;
             flex-direction: column;
 
-            a{
-               margin-bottom: 1em;
-            }
+            a{ margin-bottom: 1em; }
         }
     }
-    .button{
-        padding: 8px 20px;
-    }
+    .button{ padding: 8px 20px;  }
 
 
 }
 
+/****Custom xs small****/
 @media all and (max-width:290px){
     .total-pricing{
         .price-calc{
             font-size: .8em;
             width: 50%;
 
-            .left-pricing{
-                margin-right: .5em;
-            }
+            .left-pricing{ margin-right: .5em; }
         }
     }
 }
+
+/****Custom ipad Pro ****/
+@media all and (width:1024px){
+    .post-info{  display: none;   }
+}
+

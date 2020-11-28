@@ -11,6 +11,7 @@
      <img src="{{ productImage($post->image) }}" alt="Blog-post Image" class="img-fluid w-100 ">
  </div>
 
+
  <div class="post-info">
     <h5 class="display-2 font-weight-bolder text-white">{{ $post->title }}</h5>
     <p class="lead font-weight-bold text-white"> {{ \Illuminate\Support\Str::limit($post->excerpt ,120 ) }}</p>
@@ -25,7 +26,7 @@
 
   <div class="container">
 
-    <div class="post-body pt-3">
+    <div class="post-body pt-3 container">
         {!! $post->body  !!}
     </div>
 
