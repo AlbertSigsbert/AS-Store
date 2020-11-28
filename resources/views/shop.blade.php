@@ -3,7 +3,7 @@
 @section('title' , 'Shop')
 
 @section('extra-css')
- <link rel="stylesheet" href="{{secure_sasset('css/algolia.css')}}">
+ <link rel="stylesheet" href="{{secure_asset('css/algolia.css')}}">
 @endsection
 
 
