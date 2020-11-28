@@ -9,8 +9,8 @@
         <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
         <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;500&family=Roboto&display=swap" rel="stylesheet">
         <!--styles-->
-      <link rel="stylesheet" href="{{asset('css/main.css')}}">
-      <link rel="stylesheet" href="{{asset('css/responsive.css')}}">
+      <link rel="stylesheet" href="{{secure_asset('css/main.css')}}">
+      <link rel="stylesheet" href="{{secure_asset('css/responsive.css')}}">
 
 
       @yield('extra-css')

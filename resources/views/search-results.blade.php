@@ -3,8 +3,8 @@
 @section('title' , 'Search Results')
 
 @section('extra-css')
- <link rel="stylesheet" href="{{asset('css/app.css')}}">
- <link rel="stylesheet" href="{{asset('css/algolia.css')}}">
+ <link rel="stylesheet" href="{{secure_asset('css/app.css')}}">
+ <link rel="stylesheet" href="{{secure_asset('css/algolia.css')}}">
 @endsection
 
 @section('page-content')

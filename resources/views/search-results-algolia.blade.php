@@ -3,8 +3,8 @@
 @section('title' , 'Search Results Algolia')
 
 @section('extra-css')
- <link rel="stylesheet" href="{{asset('css/app.css')}}">
- <link rel="stylesheet" href="{{asset('css/algolia.css')}}">
+ <link rel="stylesheet" href="{{secure_asset('css/app.css')}}">
+ <link rel="stylesheet" href="{{secure_asset('css/algolia.css')}}">
  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/instantsearch.js@2.6.0/dist/instantsearch.min.css">
  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/instantsearch.js@2.6.0/dist/instantsearch-theme-algolia.min.css">
 
