@@ -1,6 +1,6 @@
 # AS Store
 
-This is a ecommerce web application made with Laravel framework that sells consumer electronics goods(fake products).
+This is a ecommerce website made with Laravel framework that sells consumer electronics goods(fake products).\n
 <img src="/public/images/products.png" />
 
 ## Features
