@@ -1,34 +1,30 @@
 # AS Store
 
-This is a ecommerce web application made with Laravel framework.
+This is a ecommerce web application made with Laravel framework that sells consumer electronics goods(fake products).
 
 ## Features
-- View Popular,Now Playing,Top rated and Upcoming Movies according to TMDB.
-- Get single movie Details
-- View Popular,Now Playing,Top rated and Upcoming TV Series according to TMDB.
-- Get single tv Details
-- Get actors and their details
-- Search a movie,actor or TV series
-- Others
-
+- Adding multiple products to shopping cart.
+- Checkout with Stripe and Paypal
+- Preview product details and price.
+- Filter products by category and prices.
+- Guest Checkout and User Authentication
+- Email Notification
+- Custom Search of Products & Search powered by Algolia
+- ADMIN Dashboard and functionalites
 
 ## Built With
-- TMDB API
-- Laravel Framework
-- TailwindCSS
-- Livewire, Alpine JS, Swiper JS and AOS library
+- Laravel Framework 
+- Stripe
+- Paypal
+- Algolia
 - Others
 
 ### Links
-
-- [Live Site URL](https://albertmovies.herokuapp.com/)
-
+- [Demo Part 1](https://youtu.be/kEJXAN5LzNg)
+- [Demo Part 2](https://youtu.be/QGxAdIOj5kI)
 
 
 ## Author
-
-- [Instagram](https://www.instagram.com/albert_sigsbert/)
-- [Frontend Mentor](https://www.frontendmentor.io/profile/AlbertSigsbert)
 - [Twitter](https://twitter.com/albert_sigsbert)
 - [LinkedIn](https://www.linkedin.com/in/albertsigsbert/)
 
