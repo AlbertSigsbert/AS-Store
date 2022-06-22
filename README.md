@@ -19,7 +19,7 @@
 - Laravel Voyager (for Admin dashboard)
 - Laravel Scout
 - Stripe & Paypal (Braintree)
-- Algolia 
+- Algolia (Algolia Search Client PHP)
 - HTML5,CSS3,SCSS,Bootstrap
 
 ### Links
