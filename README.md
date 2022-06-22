@@ -18,7 +18,8 @@ This is a ecommerce web application made with Laravel framework that sells consu
 - Stripe
 - Paypal
 - Algolia
-- Others
+- HTML5
+- CSS,SCSS,Bootstrap
 
 ### Links
 - [Demo Part 1](https://youtu.be/kEJXAN5LzNg)
