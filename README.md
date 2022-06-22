@@ -11,6 +11,7 @@ This is a ecommerce web application made with Laravel framework that sells consu
 - Email Notification
 - Custom Search of Products & Search powered by Algolia
 - ADMIN Dashboard and functionalites
+- Blog 
 
 ## Built With
 - Laravel Framework 
