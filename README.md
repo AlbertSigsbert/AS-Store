@@ -1,6 +1,7 @@
 # AS Store
 
 This is a ecommerce web application made with Laravel framework that sells consumer electronics goods(fake products).
+<img src="/public/images/products.png" />
 
 ## Features
 - Adding multiple products to shopping cart.
