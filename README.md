@@ -15,7 +15,9 @@
 - Blog 
 
 ## Built With
-- Laravel Framework 
+- Laravel Framework v7
+- Laravel Voyager (for Admin dashboard)
+- Laravel Scout
 - Stripe
 - Paypal
 - Algolia
