@@ -18,11 +18,9 @@
 - Laravel Framework v7
 - Laravel Voyager (for Admin dashboard)
 - Laravel Scout
-- Stripe
-- Paypal
-- Algolia
-- HTML5
-- CSS,SCSS,Bootstrap
+- Stripe & Paypal (Braintree)
+- Algolia 
+- HTML5,CSS3,SCSS,Bootstrap
 
 ### Links
 - [Demo Part 1](https://youtu.be/kEJXAN5LzNg)
